@@ -1,0 +1,81 @@
+[
+  {
+    "title": "You Listen",
+    "description": "Private music streaming platform with YouTube ingestion and personalized playback.",
+    "tech": [
+      "Next.js",
+      "Node.js",
+      "BullMQ",
+      "drizzle-orm",
+      "Docker",
+      "Zustand"
+    ],
+    "github": "https://github.com/Shwetanshu13/you-listen",
+    "website": "https://you-listen.vercel.app/"
+  },
+  {
+    "title": "AI DSA",
+    "description": "AI guided DSA problems solving platform that helps users learn and practice data structures and algorithms with AI assistance.",
+    "tech": [
+      "Next.js",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "BullMQ",
+      "Redis",
+      "PostgreSQL",
+      "Sandbox"
+    ],
+    "github": "https://github.com/Shwetanshu13/ai-dsa"
+  },
+  {
+    "title": "You Listen App",
+    "description": "Companion mobile app for You Listen platform.",
+    "tech": ["React Native", "Zustand", "Expo"],
+    "github": "https://github.com/Shwetanshu13/you-listen-app"
+  },
+
+  {
+    "title": "Coding Social",
+    "description": "A social platform for coding enthusiasts to share their coding profiles.",
+    "tech": ["Next.js", "Appwrite"],
+    "github": "https://github.com/Shwetanshu13/coding-social",
+    "website": "https://coding-social-sh.vercel.app/"
+  },
+  {
+    "title": "Password Generator",
+    "description": "Utility web app for generating secure random passwords.",
+    "tech": ["React", "JavaScript"],
+    "github": "https://github.com/Shwetanshu13/password-generator",
+    "website": "https://password-generator-sh.vercel.app/"
+  },
+  {
+    "title": "Legacy Locker",
+    "description": "A legacy document management / locker system (add your own description).",
+    "tech": ["Next.js", "Nodemailer", "Cron", "Clerk"],
+    "github": "https://github.com/Shwetanshu13/legacy-locker",
+    "website": "https://legacy-locker.vercel.app/"
+  },
+  {
+    "title": "Your Recipe",
+    "description": "Recipe app to manage, search, and store recipes (add your own description).",
+    "tech": ["Next.js", "MongoDB", "Tailwind CSS"],
+    "github": "https://github.com/Shwetanshu13/your-recipe",
+    "website": "https://your-recipe-sh.vercel.app/"
+  },
+  {
+    "title": "Weather API",
+    "description": "A weather application using weather API (OpenWeatherMap) with backend and frontend components.",
+    "tech": ["Next.js", "REST API"],
+    "github": "https://github.com/Shwetanshu13/weather-api",
+    "website": "https://weather-api-seven-neon.vercel.app/"
+  },
+
+  {
+    "title": "Spendwise",
+    "description": "Expense tracker with analytics and budgeting features.",
+    "tech": ["React", "Appwrite"],
+    "github": "https://github.com/Shwetanshu13/spendwise",
+    "website": "https://spendwisely.vercel.app/"
+  }
+]
