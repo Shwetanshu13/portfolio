@@ -2,21 +2,41 @@
 
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import Parser from "rss-parser";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [status, setStatus] = useState(null); // For showing cache/fallback status
 
-  const parser = new Parser();
   const getBlogs = async () => {
     try {
-      const feed = await parser.parseURL(
-        "https://shwetanshucodes.hashnode.dev/rss.xml"
-      );
-      setBlogs(feed.items.slice(0, 6)); // Show only first 6 blogs
-      console.log(feed.items);
+      const response = await fetch("/api/blogs");
+      const data = await response.json();
+
+      if (data.success) {
+        setBlogs(data.blogs);
+
+        // Set status messages
+        if (data.fallback) {
+          setStatus({
+            type: "warning",
+            message:
+              "Showing fallback content. RSS feed temporarily unavailable.",
+          });
+        } else if (data.cached) {
+          setStatus({
+            type: "info",
+            message: data.warning
+              ? "Using cached data due to fetch error"
+              : null,
+          });
+        }
+
+        console.log(data.blogs);
+      } else {
+        setError(data.error || "Failed to load blogs");
+      }
     } catch (error) {
       console.log(error);
       setError("Failed to load blogs");
@@ -39,9 +59,17 @@ const Blogs = () => {
   };
 
   const stripHtml = (html) => {
-    const tmp = document.createElement("div");
-    tmp.innerHTML = html;
-    return tmp.textContent || tmp.innerText || "";
+    if (!html) return "";
+
+    // Simple regex-based HTML stripping for better compatibility
+    return html
+      .replace(/<[^>]*>/g, "") // Remove HTML tags
+      .replace(/&nbsp;/g, " ") // Replace non-breaking spaces
+      .replace(/&amp;/g, "&") // Replace HTML entities
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&quot;/g, '"')
+      .trim();
   };
 
   if (loading) {
@@ -97,6 +125,19 @@ const Blogs = () => {
           system design, and technology trends.
         </p>
         <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-6 rounded-full"></div>
+
+        {/* Status message */}
+        {status && status.message && (
+          <div
+            className={`mt-6 max-w-2xl mx-auto p-3 rounded-lg text-sm ${
+              status.type === "warning"
+                ? "bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 text-yellow-700 dark:text-yellow-400"
+                : "bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-400"
+            }`}
+          >
+            {status.message}
+          </div>
+        )}
       </div>
 
       {/* Blogs Grid */}
@@ -159,7 +200,7 @@ const Blogs = () => {
                 <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed line-clamp-3">
                   {blog.contentSnippet
                     ? stripHtml(blog.contentSnippet)
-                    : "Click to read more..."}
+                    : "Click to read the full article..."}
                 </p>
 
                 {/* Read more indicator */}
