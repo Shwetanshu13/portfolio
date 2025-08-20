@@ -41,19 +41,12 @@ const Projects = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="group relative bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-slate-200 dark:border-slate-700 hover:border-transparent"
+            className="group relative bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-600 transform hover:-translate-y-1"
             onMouseEnter={() => setHoveredProject(index)}
             onMouseLeave={() => setHoveredProject(null)}
           >
-            {/* Gradient overlay on hover */}
-            <div
-              className={`absolute inset-0 bg-gradient-to-br ${getGradientColors(
-                index
-              )} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
-            ></div>
-
             {/* Project header with icon */}
-            <div className="relative p-6 pb-4">
+            <div className="relative p-6 pb-4 z-10">
               <div className="flex items-start justify-between mb-4">
                 <div
                   className={`w-12 h-12 bg-gradient-to-r ${getGradientColors(
@@ -95,7 +88,7 @@ const Projects = () => {
                 )}
               </div>
 
-              <h2 className="text-xl font-bold text-slate-800 dark:text-slate-200 mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-cyan-600 group-hover:bg-clip-text transition-all duration-200">
+              <h2 className="text-xl font-bold text-slate-800 dark:text-slate-200 mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
                 {project.title}
               </h2>
 
@@ -105,7 +98,7 @@ const Projects = () => {
             </div>
 
             {/* Tech stack */}
-            <div className="px-6 pb-4">
+            <div className="px-6 pb-4 relative z-10">
               <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">
                 Technologies Used:
               </h3>
@@ -113,9 +106,7 @@ const Projects = () => {
                 {project.tech.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className={`px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs rounded-full font-medium hover:bg-gradient-to-r ${getGradientColors(
-                      index
-                    )} hover:text-white transition-all duration-200 cursor-default transform hover:scale-105`}
+                    className="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs rounded-full font-medium hover:bg-blue-100 dark:hover:bg-blue-900 hover:text-blue-700 dark:hover:text-blue-300 transition-all duration-200 cursor-default transform hover:scale-105"
                   >
                     {tech}
                   </span>
@@ -124,11 +115,12 @@ const Projects = () => {
             </div>
 
             {/* Project links */}
-            <div className="px-6 pb-6 flex gap-3">
+            <div className="px-6 pb-6 flex gap-3 relative z-10">
               {project.github && (
                 <Link
                   href={project.github}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105"
                 >
                   <svg
@@ -146,6 +138,7 @@ const Projects = () => {
                 <Link
                   href={project.website}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className={`flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${getGradientColors(
                     index
                   )} text-white rounded-lg text-sm font-medium hover:shadow-lg transition-all duration-200 transform hover:scale-105`}
@@ -168,14 +161,7 @@ const Projects = () => {
               )}
             </div>
 
-            {/* Hover effect border */}
-            <div
-              className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-r ${getGradientColors(
-                index
-              )} p-[2px]`}
-            >
-              <div className="w-full h-full rounded-2xl bg-white dark:bg-slate-800"></div>
-            </div>
+            {/* Hover effect border - removed as it was causing interaction issues */}
           </div>
         ))}
       </div>
