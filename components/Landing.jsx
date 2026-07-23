@@ -10,29 +10,7 @@ const Landing = () => {
     setIsVisible(true);
   }, []);
 
-  const skills = [
-    { name: "JavaScript", level: 90 },
-    { name: "React", level: 95 },
-    { name: "Node.js", level: 85 },
-    { name: "Next.js", level: 90 },
-    { name: "TypeScript", level: 80 },
-    { name: "System Design", level: 75 },
-  ];
 
-  const technologies = [
-    "JavaScript",
-    "React",
-    "Node.js",
-    "Express",
-    "MongoDB",
-    "Next.js",
-    "Tailwind CSS",
-    "Git",
-    "Docker",
-    "TypeScript",
-    "REST APIs",
-    "System Design",
-  ];
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
@@ -98,58 +76,7 @@ const Landing = () => {
           </div>
         </div>
 
-        {/* Skills Section */}
-        <div
-          className={`transform transition-all duration-1000 delay-300 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-          }`}
-        >
-          <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-8">
-            Skills & Technologies
-          </h3>
 
-          {/* Skills with progress bars */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
-            {skills.map((skill, index) => (
-              <div
-                key={skill.name}
-                className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-lg"
-              >
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-slate-700 dark:text-slate-300 font-medium">
-                    {skill.name}
-                  </span>
-                  <span className="text-sm text-slate-500 dark:text-slate-400">
-                    {skill.level}%
-                  </span>
-                </div>
-                <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
-                  <div
-                    className="bg-gradient-to-r from-blue-500 to-cyan-500 h-2 rounded-full transition-all duration-1000 ease-out"
-                    style={{
-                      width: isVisible ? `${skill.level}%` : "0%",
-                      transitionDelay: `${index * 100}ms`,
-                    }}
-                  ></div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Tech badges */}
-          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto mb-12">
-            {technologies.map((tech, index) => (
-              <span
-                key={tech}
-                className={`px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium hover:bg-blue-100 dark:hover:bg-blue-900 hover:text-blue-700 dark:hover:text-blue-300 transform hover:scale-105 transition-all duration-200 cursor-default ${
-                  isVisible ? "animate-bounce-in" : "opacity-0"
-                }`}
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
 
           {/* Social Links */}
           <div className="flex justify-center gap-6">
@@ -196,8 +123,6 @@ const Landing = () => {
             </Link>
           </div>
         </div>
-      </div>
-
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <Link href="#projects">

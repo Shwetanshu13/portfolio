@@ -246,7 +246,7 @@ const Socials = () => {
           say hello, I'd love to hear from you!
         </p>
         <Link
-          href="mailto:shwetanshu.sinha13@gmail.com"
+          href="mailto:shwetanshusinha13@gmail.com"
           className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-200"
         >
           <svg

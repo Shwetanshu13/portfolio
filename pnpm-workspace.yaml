@@ -1,0 +1,7 @@
+allowBuilds:
+  '@tailwindcss/oxide': true
+  sharp: true
+  unrs-resolver: true
+minimumReleaseAgeExclude:
+  - '@unified-heatmap/core@0.1.0 || 0.1.1'
+  - '@unified-heatmap/react@0.1.0 || 0.1.1'

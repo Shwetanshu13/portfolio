@@ -15,6 +15,11 @@
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --heatmap-0: #e2e8f0;
+  --heatmap-1: #bae6fd;
+  --heatmap-2: #38bdf8;
+  --heatmap-3: #0284c7;
+  --heatmap-4: #0c4a6e;
 }
 
 /* Dark mode variables */
@@ -30,6 +35,11 @@
     --bg-secondary: #1e293b;
     --bg-accent: #334155;
     --border-color: #334155;
+    --heatmap-0: #1e293b;
+    --heatmap-1: #075985;
+    --heatmap-2: #0284c7;
+    --heatmap-3: #38bdf8;
+    --heatmap-4: #7dd3fc;
   }
 }
 
@@ -63,6 +73,15 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-color);
+}
+
+/* Hide scrollbar for aesthetics where needed but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 /* Utility classes for animations */

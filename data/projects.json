@@ -1,81 +1,83 @@
 [
   {
     "title": "You Listen",
-    "description": "Private music streaming platform with YouTube ingestion and personalized playback.",
+    "description": "NOT PUBLIC, BUILT ONLY FOR LEARNING PURPOSE. A private music streaming platform that lets users import YouTube playlists and songs into their personal library. Built with an asynchronous processing pipeline using BullMQ workers for ingestion, metadata extraction, and uploading. Features secure authentication, queue-based background jobs, caching, audio chunking, chunk streaming, and a modern responsive interface.",
     "tech": [
       "Next.js",
-      "Node.js",
-      "BullMQ",
-      "drizzle-orm",
-      "Docker",
-      "Zustand"
-    ],
-    "github": "https://github.com/Shwetanshu13/you-listen",
-    "website": "https://you-listen.vercel.app/"
-  },
-  {
-    "title": "AI DSA",
-    "description": "AI guided DSA problems solving platform that helps users learn and practice data structures and algorithms with AI assistance.",
-    "tech": [
-      "Next.js",
+      "TypeScript",
       "Node.js",
       "Express",
-      "MongoDB",
       "BullMQ",
       "Redis",
       "PostgreSQL",
-      "Sandbox"
+      "Drizzle ORM",
+      "Docker",
+      "Zustand",
+      "JWT",
+      "Tailwind CSS"
     ],
-    "github": "https://github.com/Shwetanshu13/ai-dsa"
+    "github": "https://github.com/Shwetanshu13/you-listen",
+    "website": "https://you-listen.vercel.app/",
+    "blogUrl": "https://shwetanshucodes.hashnode.dev/you-listen"
   },
   {
     "title": "You Listen App",
-    "description": "Companion mobile app for You Listen platform.",
-    "tech": ["React Native", "Zustand", "Expo"],
+    "description": "A cross-platform mobile companion for the You Listen ecosystem that enables seamless music playback and library access on Android and iOS. Built with Expo and React Native, sharing the same backend infrastructure as the web application.",
+    "tech": [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Zustand",
+      "Expo Router"
+    ],
     "github": "https://github.com/Shwetanshu13/you-listen-app"
-  },
-
-  {
-    "title": "Coding Social",
-    "description": "A social platform for coding enthusiasts to share their coding profiles.",
-    "tech": ["Next.js", "Appwrite"],
-    "github": "https://github.com/Shwetanshu13/coding-social",
-    "website": "https://coding-social-sh.vercel.app/"
-  },
-  {
-    "title": "Password Generator",
-    "description": "Utility web app for generating secure random passwords.",
-    "tech": ["React", "JavaScript"],
-    "github": "https://github.com/Shwetanshu13/password-generator",
-    "website": "https://password-generator-sh.vercel.app/"
   },
   {
     "title": "Legacy Locker",
-    "description": "A legacy document management / locker system (add your own description).",
-    "tech": ["Next.js", "Nodemailer", "Cron", "Clerk"],
+    "description": "A zero-knowledge, end-to-end encrypted digital vault that securely stores sensitive documents and hands down access to trusted nominees through inactivity-based or scheduled release. Uses client-side AES-256-GCM encryption with Argon2-derived keys, while BullMQ-powered background jobs automate dead-man's-switch checks and secure email notifications.",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "MongoDB",
+      "Clerk",
+      "BullMQ",
+      "Redis",
+      "AES-256-GCM",
+      "Argon2",
+      "Node Cron",
+      "Nodemailer",
+      "Tailwind CSS"
+    ],
     "github": "https://github.com/Shwetanshu13/legacy-locker",
     "website": "https://legacy-locker.vercel.app/"
   },
   {
-    "title": "Your Recipe",
-    "description": "Recipe app to manage, search, and store recipes (add your own description).",
-    "tech": ["Next.js", "MongoDB", "Tailwind CSS"],
-    "github": "https://github.com/Shwetanshu13/your-recipe",
-    "website": "https://your-recipe-sh.vercel.app/"
+    "title": "ZyloAuth (Zyloverse SSO)",
+    "description": "A custom-built Single Sign-On service powering the Zyloverse ecosystem without relying on NextAuth. Implements JWT-based authentication, refresh tokens, secure session management, and centralized identity for multiple applications through a shared authentication service.",
+    "tech": [
+      "Node.js",
+      "Express",
+      "TypeScript",
+      "JWT",
+      "PostgreSQL",
+      "Neon",
+      "Drizzle ORM",
+      "Docker"
+    ]
   },
   {
-    "title": "Weather API",
-    "description": "A weather application using weather API (OpenWeatherMap) with backend and frontend components.",
-    "tech": ["Next.js", "REST API"],
-    "github": "https://github.com/Shwetanshu13/weather-api",
-    "website": "https://weather-api-seven-neon.vercel.app/"
-  },
-
-  {
-    "title": "Spendwise",
-    "description": "Expense tracker with analytics and budgeting features.",
-    "tech": ["React", "Appwrite"],
-    "github": "https://github.com/Shwetanshu13/spendwise",
-    "website": "https://spendwisely.vercel.app/"
+    "title": "Justoo",
+    "description": "An attempt towards starting a local instant delivery service inside the college. Admin and Inventory management, user and rider dashboards, order management, delivery accepting by rider and all the features you expect from a delivery app. The app was complete but the logistics was not. :) ",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Tailwind CSS"
+    ],
+    "github": "https://github.com/Shwetanshu13/justoo",
+    "blogUrl": "https://shwetanshucodes.hashnode.dev/vibe-coding-a-local-delivery-app"
   }
 ]
