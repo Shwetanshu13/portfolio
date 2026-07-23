@@ -21,16 +21,18 @@
     "blogUrl": "https://shwetanshucodes.hashnode.dev/you-listen"
   },
   {
-    "title": "You Listen App",
-    "description": "A cross-platform mobile companion for the You Listen ecosystem that enables seamless music playback and library access on Android and iOS. Built with Expo and React Native, sharing the same backend infrastructure as the web application.",
+    "title": "Justoo",
+    "description": "An attempt towards starting a local instant delivery service inside the college. Admin and Inventory management, user and rider dashboards, order management, delivery accepting by rider and all the features you expect from a delivery app. The app was complete but the logistics was not. :) ",
     "tech": [
-      "React Native",
-      "Expo",
+      "Next.js",
       "TypeScript",
-      "Zustand",
-      "Expo Router"
+      "Node.js",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Tailwind CSS"
     ],
-    "github": "https://github.com/Shwetanshu13/you-listen-app"
+    "github": "https://github.com/Shwetanshu13/justoo",
+    "blogUrl": "https://shwetanshucodes.hashnode.dev/vibe-coding-a-local-delivery-app"
   },
   {
     "title": "Legacy Locker",
@@ -52,6 +54,19 @@
     "github": "https://github.com/Shwetanshu13/legacy-locker",
     "website": "https://legacy-locker.vercel.app/"
   },
+  
+  {
+    "title": "You Listen App",
+    "description": "A cross-platform mobile companion for the You Listen ecosystem that enables seamless music playback and library access on Android and iOS. Built with Expo and React Native, sharing the same backend infrastructure as the web application.",
+    "tech": [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Zustand",
+      "Expo Router"
+    ],
+    "github": "https://github.com/Shwetanshu13/you-listen-app"
+  },
   {
     "title": "ZyloAuth (Zyloverse SSO)",
     "description": "A custom-built Single Sign-On service powering the Zyloverse ecosystem without relying on NextAuth. Implements JWT-based authentication, refresh tokens, secure session management, and centralized identity for multiple applications through a shared authentication service.",
@@ -65,19 +80,5 @@
       "Drizzle ORM",
       "Docker"
     ]
-  },
-  {
-    "title": "Justoo",
-    "description": "An attempt towards starting a local instant delivery service inside the college. Admin and Inventory management, user and rider dashboards, order management, delivery accepting by rider and all the features you expect from a delivery app. The app was complete but the logistics was not. :) ",
-    "tech": [
-      "Next.js",
-      "TypeScript",
-      "Node.js",
-      "PostgreSQL",
-      "Drizzle ORM",
-      "Tailwind CSS"
-    ],
-    "github": "https://github.com/Shwetanshu13/justoo",
-    "blogUrl": "https://shwetanshucodes.hashnode.dev/vibe-coding-a-local-delivery-app"
   }
 ]
