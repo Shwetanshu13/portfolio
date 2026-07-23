@@ -1,0 +1,98 @@
+[
+  {
+    "title": "You Listen",
+    "description": "NOT PUBLIC, BUILT ONLY FOR LEARNING PURPOSE. A private music streaming platform that lets users import YouTube playlists and songs into their personal library. Built with an asynchronous processing pipeline using BullMQ workers for ingestion, metadata extraction, and uploading. Features secure authentication, queue-based background jobs, caching, audio chunking, chunk streaming, and a modern responsive interface.",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "BullMQ",
+      "Redis",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Docker",
+      "Zustand",
+      "JWT",
+      "Tailwind CSS"
+    ],
+    "github": "https://github.com/Shwetanshu13/you-listen",
+    "website": "https://you-listen.vercel.app/",
+    "blogUrl": "https://shwetanshucodes.hashnode.dev/you-listen"
+  },
+  {
+    "title": "Justoo",
+    "description": "An attempt towards starting a local instant delivery service inside the college. Admin and Inventory management, user and rider dashboards, order management, delivery accepting by rider and all the features you expect from a delivery app. The app was complete but the logistics was not. :) ",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Tailwind CSS"
+    ],
+    "github": "https://github.com/Shwetanshu13/justoo",
+    "blogUrl": "https://shwetanshucodes.hashnode.dev/vibe-coding-a-local-delivery-app"
+  },
+  {
+    "title": "Legacy Locker",
+    "description": "A zero-knowledge, end-to-end encrypted digital vault that securely stores sensitive documents and hands down access to trusted nominees through inactivity-based or scheduled release. Uses client-side AES-256-GCM encryption with Argon2-derived keys, while BullMQ-powered background jobs automate dead-man's-switch checks and secure email notifications.",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "MongoDB",
+      "Clerk",
+      "BullMQ",
+      "Redis",
+      "AES-256-GCM",
+      "Argon2",
+      "Node Cron",
+      "Nodemailer",
+      "Tailwind CSS"
+    ],
+    "github": "https://github.com/Shwetanshu13/legacy-locker",
+    "website": "https://legacy-locker.vercel.app/"
+  },
+  {
+    "title": "Yes Chef",
+    "description": "A full-stack recipe management platform for discovering, creating, and organizing recipes with a clean, responsive interface. Supports recipe categorization, search, rich recipe content, and user authentication while focusing on an intuitive cooking experience and scalable architecture.",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Clerk",
+      "Tailwind CSS"
+    ],
+    "github": "https://github.com/Shwetanshu13/yes-chef",
+    "website": "https://yes-chef-sh.vercel.app/"
+  },
+  {
+    "title": "You Listen App",
+    "description": "A cross-platform mobile companion for the You Listen ecosystem that enables seamless music playback and library access on Android and iOS. Built with Expo and React Native, sharing the same backend infrastructure as the web application.",
+    "tech": [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Zustand",
+      "Expo Router"
+    ],
+    "github": "https://github.com/Shwetanshu13/you-listen-app"
+  },
+  {
+    "title": "ZyloAuth (Zyloverse SSO)",
+    "description": "A custom-built Single Sign-On service powering the Zyloverse ecosystem without relying on NextAuth. Implements JWT-based authentication, refresh tokens, secure session management, and centralized identity for multiple applications through a shared authentication service.",
+    "tech": [
+      "Node.js",
+      "Express",
+      "TypeScript",
+      "JWT",
+      "PostgreSQL",
+      "Neon",
+      "Drizzle ORM",
+      "Docker"
+    ]
+  }
+]
