@@ -54,7 +54,20 @@
     "github": "https://github.com/Shwetanshu13/legacy-locker",
     "website": "https://legacy-locker.vercel.app/"
   },
-  
+  {
+    "title": "Yes Chef",
+    "description": "A full-stack recipe management platform for discovering, creating, and organizing recipes with a clean, responsive interface. Supports recipe categorization, search, rich recipe content, and user authentication while focusing on an intuitive cooking experience and scalable architecture.",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Clerk",
+      "Tailwind CSS"
+    ],
+    "github": "https://github.com/Shwetanshu13/yes-chef"
+  },
   {
     "title": "You Listen App",
     "description": "A cross-platform mobile companion for the You Listen ecosystem that enables seamless music playback and library access on Android and iOS. Built with Expo and React Native, sharing the same backend infrastructure as the web application.",
