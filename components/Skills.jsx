@@ -24,78 +24,143 @@ export default function Skills() {
     return () => observer.disconnect();
   }, []);
 
-  const skills = [
-    { name: "JavaScript", level: 90 },
-    { name: "React", level: 95 },
-    { name: "Node.js", level: 85 },
-    { name: "Next.js", level: 90 },
-    { name: "TypeScript", level: 80 },
-    { name: "System Design", level: 75 },
-  ];
-
-  const technologies = [
-    "JavaScript", "React", "Node.js", "Express", "MongoDB", "Next.js",
-    "Tailwind CSS", "Git", "Docker", "TypeScript", "REST APIs", "System Design",
-    "PostgreSQL", "GraphQL"
-  ];
+  const skillCategories = [
+  {
+    title: "Languages",
+    skills: [
+      "TypeScript",
+      "JavaScript",
+      "C++",
+      "Python",
+      "SQL"
+    ],
+  },
+  {
+    title: "Frontend",
+    skills: [
+      "React",
+      "Next.js",
+      "React Native",
+      "Expo",
+      "Tailwind CSS",
+      "HTML",
+      "CSS"
+    ],
+  },
+  {
+    title: "Backend",
+    skills: [
+      "Node.js",
+      "Express",
+      "REST APIs",
+      "GraphQL",
+      "WebSockets",
+      "JWT Authentication",
+      "Server-Sent Events"
+    ],
+  },
+  {
+    title: "Databases & ORM",
+    skills: [
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "Drizzle ORM",
+      "Mongoose",
+      "Neon",
+      "Database Design"
+    ],
+  },
+  {
+    title: "Async Processing",
+    skills: [
+      "BullMQ",
+      "Redis Queues",
+      "Background Workers",
+      "Cron Jobs",
+      "Job Scheduling",
+      "Caching"
+    ],
+  },
+  {
+    title: "DevOps & Infrastructure",
+    skills: [
+      "Docker",
+      "Git",
+      "GitHub Actions",
+      "Linux",
+      "Nginx",
+      "CI/CD"
+    ],
+  },
+  {
+    title: "Cloud & Deployment",
+    skills: [
+      "Vercel",
+      "Render",
+      "Railway",
+      "Cloudinary"
+    ],
+  },
+  {
+    title: "Authentication & Security",
+    skills: [
+      "JWT",
+      "OAuth",
+      "Clerk",
+      "AES-256-GCM",
+      "Argon2",
+      "Password Hashing"
+    ],
+  },
+  {
+    title: "Tools",
+    skills: [
+      "Postman",
+      "GitHub",
+      "VS Code",
+      "pnpm",
+      "npm",
+      "Turborepo"
+    ],
+  },
+];
 
   return (
     <div ref={sectionRef} className="max-w-5xl mx-auto space-y-12">
       <div className="text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-200 mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4 font-outfit">
           Skills & Technologies
         </h2>
-        <p className="text-lg text-slate-600 dark:text-slate-400">
-          Tools I use to bring ideas to life.
+        <p className="text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          The tools, languages, and frameworks I use to build scalable systems and intuitive interfaces.
         </p>
-        <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mt-6 rounded-full"></div>
+        <div className="w-16 h-1 bg-orange-500 mx-auto mt-6 rounded-full"></div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        {skills.map((skill, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {skillCategories.map((category, index) => (
           <div
-            key={skill.name}
-            className={`bg-white/40 dark:bg-slate-800/40 backdrop-blur-md border border-slate-200/50 dark:border-slate-700/50 rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] transform transition-all duration-700 ${
+            key={category.title}
+            className={`bg-white/80 dark:bg-white/5 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:shadow-orange-500/10 hover:border-orange-500/50 transition-all duration-300 transform ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}
             style={{ transitionDelay: `${index * 100}ms` }}
           >
-            <div className="flex justify-between items-center mb-4">
-              <span className="text-lg font-semibold text-slate-800 dark:text-slate-200">
-                {skill.name}
-              </span>
-              <span className="text-sm font-bold text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30 px-3 py-1 rounded-full">
-                {skill.level}%
-              </span>
-            </div>
-            <div className="w-full bg-slate-200 dark:bg-slate-700/50 rounded-full h-3 overflow-hidden shadow-inner">
-              <div
-                className="bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-400 h-full rounded-full transition-all duration-1500 ease-out relative overflow-hidden"
-                style={{
-                  width: isVisible ? `${skill.level}%` : "0%",
-                }}
-              >
-                {/* Shine effect */}
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full animate-shimmer"></div>
-              </div>
+            <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-white/10 pb-2">
+              {category.title}
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {category.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1.5 bg-slate-100 dark:bg-black/20 border border-slate-200/50 dark:border-white/5 text-slate-600 dark:text-slate-300 rounded-lg text-sm font-medium hover:bg-orange-500/10 hover:text-orange-500 hover:border-orange-500/30 transition-colors duration-200 cursor-default"
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
-        ))}
-      </div>
-
-      <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-        {technologies.map((tech, index) => (
-          <span
-            key={tech}
-            className={`px-6 py-3 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-full text-sm font-semibold shadow-sm hover:shadow-lg hover:border-blue-400 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transform hover:-translate-y-1 transition-all duration-300 cursor-default ${
-              isVisible ? "animate-bounce-in opacity-100" : "opacity-0 translate-y-4"
-            }`}
-            style={{ 
-              transitionDelay: `${(skills.length * 100) + (index * 50)}ms`,
-            }}
-          >
-            {tech}
-          </span>
         ))}
       </div>
     </div>

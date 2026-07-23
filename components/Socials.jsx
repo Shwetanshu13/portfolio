@@ -45,44 +45,23 @@ const Socials = () => {
     return icons[platform] || icons.default;
   };
 
-  const getGradientColors = (index, type) => {
-    const codingGradients = [
-      "from-gray-700 to-gray-900", // GitHub
-      "from-blue-600 to-blue-800", // LinkedIn
-      "from-blue-400 to-blue-600", // Twitter
-      "from-yellow-500 to-orange-600", // LeetCode
-      "from-orange-500 to-red-600", // CodeChef
-    ];
-
-    const miscGradients = [
-      "from-pink-500 to-rose-600",
-      "from-purple-500 to-indigo-600",
-      "from-green-500 to-teal-600",
-      "from-cyan-500 to-blue-600",
-      "from-red-500 to-pink-600",
-    ];
-
-    const gradients = type === "coding" ? codingGradients : miscGradients;
-    return gradients[index % gradients.length];
-  };
-
   return (
     <div className="space-y-16">
       {/* Section Header */}
       <div className="text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-slate-200 mb-4">
+        <h1 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4 font-outfit">
           Let's Connect
         </h1>
-        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+        <p className="text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
           Feel free to reach out for collaborations, opportunities, or just a
           friendly chat about technology and development.
         </p>
-        <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto mt-6 rounded-full"></div>
+        <div className="w-16 h-1 bg-orange-500 mx-auto mt-6 rounded-full"></div>
       </div>
 
       {/* Coding Platforms Section */}
       <div>
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-200 mb-8 text-center">
+        <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-8 text-center font-outfit">
           Coding Platforms
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -96,34 +75,23 @@ const Socials = () => {
               onMouseLeave={() => setHoveredSocial(null)}
             >
               <div
-                className={`relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 hover:border-transparent transform hover:-translate-y-2 overflow-hidden`}
+                className="relative bg-white/80 dark:bg-white/5 backdrop-blur-xl rounded-2xl p-6 shadow-sm hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300 border border-slate-200 dark:border-white/10 hover:border-orange-500/50 transform hover:-translate-y-1 overflow-hidden"
               >
-                {/* Background gradient on hover */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${getGradientColors(
-                    index,
-                    "coding"
-                  )} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
-                ></div>
-
                 <div className="relative z-10 flex flex-col items-center text-center">
                   {/* Icon */}
                   <div
-                    className={`w-16 h-16 bg-gradient-to-br ${getGradientColors(
-                      index,
-                      "coding"
-                    )} rounded-2xl flex items-center justify-center text-white mb-4 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg`}
+                    className="w-16 h-16 bg-slate-100 dark:bg-black/20 border border-slate-200/50 dark:border-white/10 rounded-2xl flex items-center justify-center text-slate-500 dark:text-slate-400 mb-4 transform group-hover:scale-110 transition-all duration-300 shadow-sm group-hover:text-orange-500 group-hover:bg-orange-500/10 group-hover:border-orange-500/30"
                   >
                     {getSocialIcon(social.platform)}
                   </div>
 
                   {/* Platform name */}
-                  <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-cyan-600 group-hover:bg-clip-text transition-all duration-200">
+                  <h3 className="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2 group-hover:text-orange-500 transition-colors duration-200">
                     {social.platform}
                   </h3>
 
                   {/* Visit link indicator */}
-                  <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 font-medium text-sm group-hover:gap-3 transition-all duration-200">
+                  <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400 group-hover:text-orange-500 font-medium text-sm group-hover:gap-3 transition-all duration-200">
                     <span>Visit Profile</span>
                     <svg
                       className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"
@@ -134,21 +102,11 @@ const Socials = () => {
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth={2}
+                        strokeWidth={1.5}
                         d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                       />
                     </svg>
                   </div>
-                </div>
-
-                {/* Hover effect border */}
-                <div
-                  className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-r ${getGradientColors(
-                    index,
-                    "coding"
-                  )} p-[2px]`}
-                >
-                  <div className="w-full h-full rounded-2xl bg-white dark:bg-slate-800"></div>
                 </div>
               </div>
             </Link>
@@ -158,7 +116,7 @@ const Socials = () => {
 
       {/* Miscellaneous Socials Section */}
       <div>
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-200 mb-8 text-center">
+        <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-8 text-center font-outfit">
           Social Networks
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -172,38 +130,27 @@ const Socials = () => {
               onMouseLeave={() => setHoveredSocial(null)}
             >
               <div
-                className={`relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 hover:border-transparent transform hover:-translate-y-2 overflow-hidden`}
+                className="relative bg-white/80 dark:bg-white/5 backdrop-blur-xl rounded-2xl p-6 shadow-sm hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300 border border-slate-200 dark:border-white/10 hover:border-orange-500/50 transform hover:-translate-y-1 overflow-hidden"
               >
-                {/* Background gradient on hover */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${getGradientColors(
-                    index,
-                    "misc"
-                  )} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
-                ></div>
-
                 <div className="relative z-10 flex flex-col items-center text-center">
                   {/* Icon or emoji */}
                   <div
-                    className={`w-16 h-16 bg-gradient-to-br ${getGradientColors(
-                      index,
-                      "misc"
-                    )} rounded-2xl flex items-center justify-center text-white mb-4 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg`}
+                    className="w-16 h-16 bg-slate-100 dark:bg-black/20 border border-slate-200/50 dark:border-white/10 rounded-2xl flex items-center justify-center text-slate-500 dark:text-slate-400 mb-4 transform group-hover:scale-110 transition-all duration-300 shadow-sm group-hover:text-orange-500 group-hover:bg-orange-500/10 group-hover:border-orange-500/30"
                   >
-                    {social.icon ? (
-                      <span className="text-2xl">{social.icon}</span>
+                    {social.icon && !['linkedin', 'github', 'twitter'].includes(social.icon.toLowerCase()) ? (
+                      <span className="text-2xl text-slate-800 dark:text-slate-100">{social.icon}</span>
                     ) : (
                       getSocialIcon(social.platform)
                     )}
                   </div>
 
                   {/* Platform name */}
-                  <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-pink-600 group-hover:bg-clip-text transition-all duration-200">
+                  <h3 className="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2 group-hover:text-orange-500 transition-colors duration-200">
                     {social.platform}
                   </h3>
 
                   {/* Visit link indicator */}
-                  <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 font-medium text-sm group-hover:gap-3 transition-all duration-200">
+                  <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400 group-hover:text-orange-500 font-medium text-sm group-hover:gap-3 transition-all duration-200">
                     <span>Connect</span>
                     <svg
                       className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"
@@ -214,21 +161,11 @@ const Socials = () => {
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth={2}
+                        strokeWidth={1.5}
                         d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                       />
                     </svg>
                   </div>
-                </div>
-
-                {/* Hover effect border */}
-                <div
-                  className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-r ${getGradientColors(
-                    index,
-                    "misc"
-                  )} p-[2px]`}
-                >
-                  <div className="w-full h-full rounded-2xl bg-white dark:bg-slate-800"></div>
                 </div>
               </div>
             </Link>
@@ -237,8 +174,8 @@ const Socials = () => {
       </div>
 
       {/* Contact CTA */}
-      <div className="text-center bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-12 border border-blue-100 dark:border-slate-600">
-        <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4">
+      <div className="text-center bg-white/80 dark:bg-white/5 backdrop-blur-xl rounded-2xl p-12 border border-slate-200 dark:border-white/10 shadow-sm">
+        <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-4 font-outfit">
           Ready to Start a Conversation?
         </h3>
         <p className="text-slate-600 dark:text-slate-400 mb-8 max-w-xl mx-auto">
@@ -247,7 +184,7 @@ const Socials = () => {
         </p>
         <Link
           href="mailto:shwetanshusinha13@gmail.com"
-          className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-200"
+          className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-orange-500 to-rose-500 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-orange-500/40 transform hover:-translate-y-0.5 transition-all duration-200"
         >
           <svg
             className="w-5 h-5"

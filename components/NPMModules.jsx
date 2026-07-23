@@ -18,31 +18,28 @@ export default function NPMModules() {
   return (
     <div className="max-w-5xl mx-auto">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-200 mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4 font-outfit">
           Open Source Contributions
         </h2>
-        <p className="text-lg text-slate-600 dark:text-slate-400">
+        <p className="text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
           My published NPM packages building the unified heatmap ecosystem.
         </p>
-        <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-6 rounded-full"></div>
+        <div className="w-16 h-1 bg-orange-500 mx-auto mt-6 rounded-full"></div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {packages.map((pkg, index) => (
           <div 
             key={index} 
-            className="group relative bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl border border-slate-200 dark:border-slate-700 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden"
+            className="group relative bg-white/80 dark:bg-white/5 backdrop-blur-xl rounded-2xl p-8 shadow-sm border border-slate-200 dark:border-white/10 hover:shadow-xl hover:shadow-orange-500/10 hover:border-orange-500/50 transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
           >
-            {/* Background gradient shine */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            
             <div className="relative z-10 flex flex-col h-full">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                <div className="w-12 h-12 bg-slate-100 dark:bg-black/20 border border-slate-200/50 dark:border-white/10 rounded-xl flex items-center justify-center text-slate-500 dark:text-slate-400 font-bold text-xl shadow-sm group-hover:text-orange-500 group-hover:border-orange-500/30 group-hover:bg-orange-500/10 transition-colors duration-300">
                   npm
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200">
+                  <h3 className="text-xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-orange-500 transition-colors duration-200">
                     {pkg.name}
                   </h3>
                 </div>
@@ -56,7 +53,7 @@ export default function NPMModules() {
                 <Link 
                   href={pkg.url} 
                   target="_blank"
-                  className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 font-semibold group-hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 text-orange-500 font-semibold group-hover:gap-3 transition-all duration-200"
                 >
                   View on npm
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -65,9 +62,6 @@ export default function NPMModules() {
                 </Link>
               </div>
             </div>
-            
-            {/* Animated border on hover */}
-            <div className="absolute inset-0 border-2 border-transparent group-hover:border-purple-500/50 rounded-3xl transition-colors duration-300 pointer-events-none"></div>
           </div>
         ))}
       </div>

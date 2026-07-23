@@ -1,48 +1,5 @@
 @import "tailwindcss";
 
-/* Custom CSS Variables for consistent theming */
-:root {
-  --primary-color: #2563eb;
-  --secondary-color: #64748b;
-  --accent-color: #0ea5e9;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #94a3b8;
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
-  --bg-accent: #f1f5f9;
-  --border-color: #e2e8f0;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --heatmap-0: #e2e8f0;
-  --heatmap-1: #bae6fd;
-  --heatmap-2: #38bdf8;
-  --heatmap-3: #0284c7;
-  --heatmap-4: #0c4a6e;
-}
-
-/* Dark mode variables */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary-color: #3b82f6;
-    --secondary-color: #94a3b8;
-    --accent-color: #0ea5e9;
-    --text-primary: #f8fafc;
-    --text-secondary: #cbd5e1;
-    --text-muted: #64748b;
-    --bg-primary: #0f172a;
-    --bg-secondary: #1e293b;
-    --bg-accent: #334155;
-    --border-color: #334155;
-    --heatmap-0: #1e293b;
-    --heatmap-1: #075985;
-    --heatmap-2: #0284c7;
-    --heatmap-3: #38bdf8;
-    --heatmap-4: #7dd3fc;
-  }
-}
-
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
@@ -51,10 +8,34 @@ html {
 /* Base body styling */
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
   line-height: 1.6;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root {
+  --heatmap-0: #f8fafc; /* slate-50 */
+  --heatmap-1: #ffedd5; /* orange-100 */
+  --heatmap-2: #fdba74; /* orange-300 */
+  --heatmap-3: #f97316; /* orange-500 */
+  --heatmap-4: #c2410c; /* orange-700 */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --heatmap-0: #1e293b; /* slate-800 */
+    --heatmap-1: #7c2d12; /* orange-900 */
+    --heatmap-2: #c2410c; /* orange-700 */
+    --heatmap-3: #ea580c; /* orange-600 */
+    --heatmap-4: #f97316; /* orange-500 */
+  }
+}
+
+.dark {
+  --heatmap-0: #1e293b; /* slate-800 */
+  --heatmap-1: #7c2d12; /* orange-900 */
+  --heatmap-2: #c2410c; /* orange-700 */
+  --heatmap-3: #ea580c; /* orange-600 */
+  --heatmap-4: #f97316; /* orange-500 */
 }
 
 /* Custom scrollbar */
@@ -63,16 +44,22 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--secondary-color);
+  background: #cbd5e1;
   border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-color);
+  background: #f97316; /* Orange 500 */
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #f97316;
 }
 
 /* Hide scrollbar for aesthetics where needed but keep functionality */
@@ -136,9 +123,15 @@ body {
 /* Grid pattern background */
 .bg-grid-pattern {
   background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.dark .bg-grid-pattern {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
 
 @keyframes fadeIn {
@@ -220,22 +213,10 @@ body {
   }
 }
 
-/* Gradient backgrounds */
-.gradient-bg {
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 /* Focus styles for better accessibility */
 button:focus,
 a:focus {
-  outline: 2px solid var(--primary-color);
+  outline: 2px solid #f97316;
   outline-offset: 2px;
 }
 
@@ -246,12 +227,12 @@ a, button {
 
 /* Selection styling */
 ::selection {
-  background-color: var(--primary-color);
+  background-color: #f97316;
   color: white;
 }
 
 ::-moz-selection {
-  background-color: var(--primary-color);
+  background-color: #f97316;
   color: white;
 }
 

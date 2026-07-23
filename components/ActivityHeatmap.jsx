@@ -30,18 +30,18 @@ export default async function ActivityHeatmap() {
   return (
     <div className="w-full max-w-5xl mx-auto">
       <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-200 mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4 font-outfit">
           Daily Consistency
         </h2>
-        <p className="text-lg text-slate-600 dark:text-slate-400">
+        <p className="text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
           My combined coding activity across GitHub, Codeforces, and LeetCode.
         </p>
-        <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mt-6 rounded-full"></div>
+        <div className="w-16 h-1 bg-orange-500 mx-auto mt-6 rounded-full"></div>
       </div>
 
-      <div className="bg-white/50 dark:bg-slate-800/50 backdrop-blur-md border border-slate-200 dark:border-slate-700 rounded-3xl p-6 md:p-10 shadow-xl">
+      <div className="bg-white/80 dark:bg-white/5 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-2xl p-6 md:p-10 shadow-sm transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10 hover:border-orange-500/50">
         {error ? (
-          <div className="text-red-500 text-center py-10">
+          <div className="text-red-500 text-center py-10 font-medium">
             Failed to load heatmap data. Please try again later.
           </div>
         ) : data ? (
@@ -54,7 +54,7 @@ export default async function ActivityHeatmap() {
             }}
           />
         ) : (
-          <div className="text-center py-10 animate-pulse text-slate-500">
+          <div className="text-center py-10 animate-pulse text-slate-400 dark:text-slate-500 font-medium">
             Loading activity data...
           </div>
         )}
