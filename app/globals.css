@@ -13,44 +13,44 @@ body {
 }
 
 :root {
-  --heatmap-0: #f8fafc;
-  /* slate-50 */
-  --heatmap-1: #ffedd5;
-  /* orange-100 */
-  --heatmap-2: #fdba74;
-  /* orange-300 */
-  --heatmap-3: #f97316;
-  /* orange-500 */
-  --heatmap-4: #c2410c;
-  /* orange-700 */
+  --heatmap-0: #fdfbf7;
+  /* stone-50 */
+  --heatmap-1: #ccfbf1;
+  /* teal-100 */
+  --heatmap-2: #5eead4;
+  /* teal-300 */
+  --heatmap-3: #14b8a6;
+  /* teal-500 */
+  --heatmap-4: #0f766e;
+  /* teal-700 */
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
-    --heatmap-0: #1e293b;
-    /* slate-800 */
-    --heatmap-1: #7c2d12;
-    /* orange-900 */
-    --heatmap-2: #c2410c;
-    /* orange-700 */
-    --heatmap-3: #ea580c;
-    /* orange-600 */
-    --heatmap-4: #f97316;
-    /* orange-500 */
+    --heatmap-0: #0f172a;
+    /* slate-900 */
+    --heatmap-1: #115e59;
+    /* teal-800 */
+    --heatmap-2: #0f766e;
+    /* teal-700 */
+    --heatmap-3: #0d9488;
+    /* teal-600 */
+    --heatmap-4: #14b8a6;
+    /* teal-500 */
   }
 }
 
 .dark {
-  --heatmap-0: #1e293b;
-  /* slate-800 */
-  --heatmap-1: #7c2d12;
-  /* orange-900 */
-  --heatmap-2: #c2410c;
-  /* orange-700 */
-  --heatmap-3: #ea580c;
-  /* orange-600 */
-  --heatmap-4: #f97316;
-  /* orange-500 */
+  --heatmap-0: #0f172a;
+  /* slate-900 */
+  --heatmap-1: #115e59;
+  /* teal-800 */
+  --heatmap-2: #0f766e;
+  /* teal-700 */
+  --heatmap-3: #0d9488;
+  /* teal-600 */
+  --heatmap-4: #14b8a6;
+  /* teal-500 */
 }
 
 /* Custom scrollbar */
@@ -72,12 +72,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #f97316;
-  /* Orange 500 */
+  background: #14b8a6;
+  /* Teal 500 */
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #f97316;
+  background: #14b8a6;
 }
 
 /* Hide scrollbar for aesthetics where needed but keep functionality */
@@ -252,7 +252,7 @@ body {
 /* Focus styles for better accessibility */
 button:focus,
 a:focus {
-  outline: 2px solid #f97316;
+  outline: 2px solid #14b8a6;
   outline-offset: 2px;
 }
 
@@ -264,11 +264,11 @@ button {
 
 /* Selection styling */
 ::selection {
-  background-color: #f97316;
+  background-color: #14b8a6;
   color: white;
 }
 
 ::-moz-selection {
-  background-color: #f97316;
+  background-color: #14b8a6;
   color: white;
 }
